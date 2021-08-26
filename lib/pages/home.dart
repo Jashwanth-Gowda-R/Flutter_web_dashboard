@@ -8,22 +8,25 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        // crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Center(child: Text('clicked! :${counterController.counter.value} ')),
-          SizedBox(
-            height: 10,
-          ),
-          Center(
-            child: ElevatedButton(
-                onPressed: () {
-                  Get.to(Other());
-                },
-                child: Text('open other page')),
-          ),
-        ],
+      body: Obx(
+        () => Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          // crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Center(
+                child: Text('clicked! :${counterController.counter.value} ')),
+            SizedBox(
+              height: 10,
+            ),
+            Center(
+              child: ElevatedButton(
+                  onPressed: () {
+                    Get.to(Other());
+                  },
+                  child: Text('open other page')),
+            ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

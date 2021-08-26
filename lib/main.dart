@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web_dashboard/pages/home.dart';
+
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Web Dashboard',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -22,10 +24,21 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
+        scaffoldBackgroundColor: Colors.white,
+        textTheme: GoogleFonts.mulishTextTheme(
+          Theme.of(context).textTheme
+        ).apply(
+          bodyColor: Colors.black
+        ),
+        pageTransitionsTheme: PageTransitionsTheme(
+            builders: {
+              TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
+              TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
+            }
+        ),
         primarySwatch: Colors.blue,
       ),
-      home: Home(),
+      home: Container(),
     );
   }
 }
-

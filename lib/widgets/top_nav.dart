@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_dashboard/constants/style.dart';
 import 'package:flutter_web_dashboard/helpers/reponsiveness.dart';
+import 'package:flutter_web_dashboard/widgets/custom_text.dart';
 
 AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
     AppBar(
@@ -22,4 +24,16 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
               icon: Icon(Icons.menu)),
       // backgroundColor: Colors.white,
       elevation: 0,
+      title: Row(
+        children: [
+          Visibility(
+              child: CustomText(
+            text: 'Dashboard',
+            color: lightGrey,
+            size: 20,
+            weight: FontWeight.bold,
+          )),
+
+        ],
+      ),
     );

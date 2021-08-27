@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_dashboard/controllers/menu_controller.dart';
 import 'package:flutter_web_dashboard/layout.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
+  Get.put(MenuController());
   runApp(MyApp());
 }
 
@@ -26,17 +28,12 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         scaffoldBackgroundColor: Colors.white,
-        textTheme: GoogleFonts.mulishTextTheme(
-          Theme.of(context).textTheme
-        ).apply(
-          bodyColor: Colors.black
-        ),
-        pageTransitionsTheme: PageTransitionsTheme(
-            builders: {
-              TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
-              TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
-            }
-        ),
+        textTheme: GoogleFonts.mulishTextTheme(Theme.of(context).textTheme)
+            .apply(bodyColor: Colors.black),
+        pageTransitionsTheme: PageTransitionsTheme(builders: {
+          TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
+          TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
+        }),
         primarySwatch: Colors.blue,
       ),
       home: SiteLayout(),

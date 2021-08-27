@@ -1,4 +1,4 @@
-# flutter_web_dashboard
+# Flutter Web Dashboard
 
 A new Flutter application.
 

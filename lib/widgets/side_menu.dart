@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_web_dashboard/constants/controllers.dart';
 import 'package:flutter_web_dashboard/constants/style.dart';
 import 'package:flutter_web_dashboard/helpers/reponsiveness.dart';
+import 'package:flutter_web_dashboard/pages/authentication/authentication.dart';
 import 'package:flutter_web_dashboard/routing/routes.dart';
 import 'package:flutter_web_dashboard/widgets/custom_text.dart';
 import 'package:flutter_web_dashboard/widgets/side_menu_item.dart';
@@ -60,14 +61,13 @@ class SideMenu extends StatelessWidget {
                         : itemName,
                     onTap: () {
                       if (itemName == authenticationPageRoute) {
-                        // Get.offAllNamed(authenticationPageRoute);
+                        Get.offAll(AuthenticationPage());
                         // menuController
                         //     .changeActiveItemTo(overviewPageDisplayName);
                       }
                       if (!menuController.isActive(itemName)) {
                         menuController.changeActiveItemTo(itemName);
-                        if (ResponsiveWidget.isSmallScreen(context))
-                          Get.back();
+                        if (ResponsiveWidget.isSmallScreen(context)) Get.back();
                         navigationController.navigateTo(itemName);
                       }
                     }))

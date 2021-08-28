@@ -13,7 +13,7 @@ class SiteLayout extends StatelessWidget {
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
     return Scaffold(
       key: scaffoldKey,
-      extendBodyBehindAppBar: true,
+      // extendBodyBehindAppBar: true,
       appBar: topNavigationBar(context, scaffoldKey),
       drawer: Drawer(
         child: SideMenu(),

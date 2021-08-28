@@ -71,7 +71,7 @@ class DriversTable extends StatelessWidget {
                         padding:
                             EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                         child: CustomText(
-                          text: "Block",
+                          text: "Block driver",
                           color: active.withOpacity(.7),
                           weight: FontWeight.bold,
                         ))),

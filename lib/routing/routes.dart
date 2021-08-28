@@ -12,23 +12,24 @@ const clientsPageRoute = "/clients";
 const authenticationPageDisplayName = "Log out";
 const authenticationPageRoute = "/auth";
 
-// class MenuItem {
-//   final String name;
-//   final String route;
-//
-//   MenuItem(this.name, this.route);
-// }
-//
-// List<MenuItem> sideMenuItemRoutes = [
-//   MenuItem(overviewPageDisplayName, overviewPageRoute),
-//   MenuItem(driversPageDisplayName, driversPageRoute),
-//   MenuItem(clientsPageDisplayName, clientsPageRoute),
-//   MenuItem(authenticationPageDisplayName, authenticationPageRoute),
-// ];
+class MenuItem {
+  final String name;
+  final String route;
 
-List sideMenuItemRoutes = [
-  overviewPageDisplayName,
-  driversPageDisplayName,
-  clientsPageDisplayName,
-  authenticationPageDisplayName
+  MenuItem(this.name, this.route);
+}
+
+
+
+List<MenuItem> sideMenuItemRoutes = [
+  MenuItem(overviewPageDisplayName, overviewPageRoute),
+  MenuItem(driversPageDisplayName, driversPageRoute),
+  MenuItem(clientsPageDisplayName, clientsPageRoute),
+  MenuItem(authenticationPageDisplayName, authenticationPageRoute),
 ];
+// List sideMenuItemRoutes = [
+//   overviewPageDisplayName,
+//   driversPageDisplayName,
+//   clientsPageDisplayName,
+//   authenticationPageDisplayName
+// ];

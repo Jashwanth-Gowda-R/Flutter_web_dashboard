@@ -3,10 +3,12 @@ import 'package:flutter_web_dashboard/constants/style.dart';
 import 'package:flutter_web_dashboard/controllers/menu_controller.dart';
 import 'package:flutter_web_dashboard/controllers/navigation_controller.dart';
 import 'package:flutter_web_dashboard/layout.dart';
+import 'package:flutter_web_dashboard/pages/404/error.dart';
 import 'package:flutter_web_dashboard/pages/authentication/authentication.dart';
-
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'routing/routes.dart';
 
 void main() {
   Get.put(MenuController());
@@ -19,18 +21,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      initialRoute: authenticationPageRoute,
+      unknownRoute: GetPage(
+          name: '/not-found',
+          page: () => PageNotFound(),
+          transition: Transition.fadeIn),
+      getPages: [
+        GetPage(name: rootRoute, page: () => SiteLayout()),
+        GetPage(
+            name: authenticationPageRoute, page: () => AuthenticationPage()),
+      ],
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Web Dashboard',
+      title: 'Dashboard',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         scaffoldBackgroundColor: light,
         textTheme: GoogleFonts.mulishTextTheme(Theme.of(context).textTheme)
             .apply(bodyColor: Colors.black),
@@ -40,7 +43,7 @@ class MyApp extends StatelessWidget {
         }),
         primarySwatch: Colors.blue,
       ),
-      home: AuthenticationPage(),
+      // home: AuthenticationPage(),
     );
   }
 }

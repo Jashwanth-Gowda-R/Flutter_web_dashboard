@@ -1,6 +1,11 @@
 # Flutter Web Dashboard
 
-A new Flutter application.
+A new Flutter Web application.
+Live Preview: https://jashwanth-shani-flutterwebdashboard.netlify.app
+
+Topics
+Resources
+
 
 ## Getting Started
 
